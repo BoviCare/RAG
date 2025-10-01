@@ -44,14 +44,14 @@ async def rerank_documents_with_openai(
         try:
             response = await asyncio.to_thread(
                 openai_client.beta.chat.completions.parse,
-                model="gpt-4o-mini",
+                model="gpt-5-nano",
                 messages=[
                     {"role": "system", "content": "You are a relevance scoring expert for veterinary medicine documents that provides structured JSON output."},
                     {"role": "user", "content": prompt}
                 ],
                 response_format=SingleDocumentResponse,
-                temperature=0.0,
-                max_completion_tokens=1000
+                # temperature=0.0,
+                # max_completion_tokens=1000
             )
             
             parsed_response = response.choices[0].message.parsed
@@ -73,13 +73,13 @@ async def rerank_documents_with_openai(
                 logger.info("Trying fallback reranking without structured output...")
                 fallback_response = await asyncio.to_thread(
                     openai_client.chat.completions.create,
-                    model="gpt-4o-mini",
+                    model="gpt-5-nano",
                     messages=[
                         {"role": "system", "content": "You are a relevance scoring expert. Return only a number between 0.0 and 1.0 representing relevance."},
                         {"role": "user", "content": f"Query: '{query}'\nDocument: '{doc.get('section_text', '')}'\nRelevance score (0.0-1.0):"}
                     ],
-                    temperature=0.0,
-                    max_completion_tokens=100
+                    # temperature=0.0,
+                    # max_completion_tokens=100
                 )
                 
                 fallback_score = fallback_response.choices[0].message.content.strip()
@@ -133,13 +133,13 @@ async def generate_rag_response(
     try:
         response = await asyncio.to_thread(
             openai_client.chat.completions.create,
-            model="gpt-4o-mini",
+            model="gpt-5-nano",
             messages=[
                 {"role": "system", "content": "You are an expert veterinary medicine assistant specializing in bovine diseases. Provide accurate, helpful information based on the veterinary literature provided."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.0,
-            max_completion_tokens=1000
+            # temperature=0.0,
+            # max_completion_tokens=1000
         )
         
         response_content = response.choices[0].message.content
