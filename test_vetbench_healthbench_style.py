@@ -32,7 +32,7 @@ class BoviCareRAGSystemHealthBenchStyle:
             # Perform hybrid search (get more results for reranking)
             search_results = await self.vector_service.hybrid_search(
                 query=query,
-                top_k=6  # Get more results for reranking
+                top_k=4  # Get more results for reranking
             )
             
             if not search_results:
@@ -170,7 +170,7 @@ async def run_vetbench_healthbench_style_test(models_to_test: List[str] = None, 
     """Run HealthBench-style VetBench evaluation on BoviCare system with model comparison"""
     
     if models_to_test is None:
-        models_to_test = ["gpt-5-nano", "gpt-5-mini", "gpt-5"]  # Focus on GPT-5 models
+        models_to_test = ["gpt-5-mini"]  # Focus on GPT-5-mini for faster testing
     
     logger.info(f"🐄 Starting HealthBench-style VetBench evaluation for BoviCare RAG system with models: {models_to_test}")
     logger.info(f"🔄 Reranking enabled: {use_reranking}")
@@ -196,31 +196,56 @@ async def run_vetbench_healthbench_style_test(models_to_test: List[str] = None, 
             # Initialize HealthBench-style VetBench evaluator with this model
             evaluator = VetBenchHealthBenchStyle(model_client=model_client)
         
-            # Define veterinary test queries in Portuguese (HealthBench-style)
+            # Define all 10 real veterinary test queries with expected responses from veterinary experts
             test_queries = [
                 {
-                    "query": "Quais são os primeiros sinais de mastite em vacas leiteiras?",
-                    "expected_response": "Os primeiros sinais incluem mudanças na aparência do leite, inchaço do úbere, diminuição da produção de leite e mudanças comportamentais como chutar durante a ordenha.",
-                    "context": "dairy_management"
+                    "query": "Notei abortos no terço final da gestação e diminuição na produção de leite. Qual doença pode estar afetando meu rebanho e o que devo fazer?",
+                    "expected_response": "Os sinais são compatíveis com Brucelose bovina, causada pela Brucella abortus. A enfermidade provoca abortos no final da gestação e queda na produção de leite. O controle baseia-se na vacinação das fêmeas entre 3 e 8 meses com a cepa B19 ou RB51, eliminação dos animais positivos e rigorosa biossegurança no manejo reprodutivo. É fundamental realizar testes sorológicos de triagem (Rosa de Bengala) e confirmação (2-mercaptoetanol ou fixação de complemento). Consulte o veterinário responsável e notifique os casos conforme o PNCEBT.",
+                    "context": "disease_diagnosis"
                 },
                 {
-                    "query": "Como devo lidar com uma vaca com suspeita de IBR?",
-                    "expected_response": "Isole o animal imediatamente, entre em contato com seu veterinário, implemente medidas de biossegurança e monitore outros animais para sintomas.",
+                    "query": "Durante o período de chuvas, observei aumento de abortos e natimortos. Qual a provável causa e como prevenir novos casos?",
+                    "expected_response": "Provavelmente trata-se de Leptospirose bovina, zoonose causada por Leptospira spp.. A transmissão ocorre em ambientes úmidos e contaminados por urina de animais infectados. O controle envolve vacinação periódica do rebanho, drenagem de áreas alagadas, controle de roedores e isolamento de animais doentes. A higienização das instalações e manejo adequado da água são medidas fundamentais.",
                     "context": "disease_outbreak"
                 },
                 {
-                    "query": "Qual cronograma de vacinação devo seguir para bezerros?",
-                    "expected_response": "Bezerros devem ser vacinados aos 2-3 meses para IBR/BVD, 4-6 meses para doenças clostridiais e anualmente para doenças respiratórias, seguindo orientação veterinária.",
-                    "context": "vaccination_schedule"
-                },
-                {
-                    "query": "Minha vaca está sem comer há 2 dias, o que devo fazer?",
-                    "expected_response": "Esta é uma emergência médica. Verifique os sinais vitais, examine para sinais de doença, entre em contato com seu veterinário imediatamente e considere isolamento se doença infecciosa for suspeita.",
+                    "query": "Alguns bovinos estão com dificuldade de locomoção, salivação intensa e sinais neurológicos. O que pode ser e qual a conduta?",
+                    "expected_response": "Esses sinais indicam Raiva dos herbívoros, doença viral fatal. Não há tratamento, e a profilaxia é essencial. Deve-se vacinar todo o rebanho anualmente, isolar imediatamente os animais suspeitos e notificar o serviço veterinário oficial. Evite manipular carcaças sem proteção, pois é zoonose grave. O controle dos transmissores, como morcegos hematófagos, também é indispensável.",
                     "context": "emergency_care"
                 },
                 {
-                    "query": "Quais são os impactos econômicos da BVD no meu rebanho?",
-                    "expected_response": "A BVD pode causar perdas reprodutivas, redução da produção de leite, aumento dos custos veterinários e possível descarte de animais persistentemente infectados, impactando significativamente a lucratividade da fazenda.",
+                    "query": "Notei grumos e alteração na coloração do leite de algumas vacas. O que pode estar ocorrendo e como controlar?",
+                    "expected_response": "Os sintomas sugerem Mastite, inflamação da glândula mamária geralmente causada por Staphylococcus, Streptococcus ou E. coli. O controle envolve higiene rigorosa na ordenha, descarte do primeiro jato, desinfecção dos tetos antes e após a ordenha e manutenção dos equipamentos limpos. É recomendada a terapia de vaca seca e o acompanhamento com exames de CCS (contagem de células somáticas). Casos graves requerem avaliação veterinária e tratamento com antibióticos adequados.",
+                    "context": "mastitis_management"
+                },
+                {
+                    "query": "Um animal apresentou emagrecimento progressivo e tosse crônica. Pode ser tuberculose? O que devo fazer?",
+                    "expected_response": "Sim, a Tuberculose bovina, causada por Mycobacterium bovis, provoca perda de peso, tosse e debilidade geral. É uma zoonose de importância sanitária. O controle é feito pelo abate sanitário dos animais positivos identificados por testes intradérmicos (tuberculinização). Não há tratamento, e a prevenção depende de programas oficiais como o PNCEBT. Evite consumo de leite cru e mantenha isolamento dos suspeitos.",
+                    "context": "disease_diagnosis"
+                },
+                {
+                    "query": "Mesmo vacinando contra brucelose, alguns animais continuam abortando. Pode ser outra doença?",
+                    "expected_response": "Sim, pode tratar-se de Neosporose bovina, causada pelo protozoário Neospora caninum. Transmite-se verticalmente e via contaminação por fezes de cães. O controle envolve impedir o acesso de cães a restos placentários e alimentos do gado, além do descarte de animais positivos. Não existe vacina ou tratamento eficaz, portanto, o manejo higiênico e a biossegurança são essenciais.",
+                    "context": "disease_outbreak"
+                },
+                {
+                    "query": "Alguns bovinos estão apáticos, com mucosas pálidas e queda de produção de leite. O que devo suspeitar?",
+                    "expected_response": "Os sinais são compatíveis com Tristeza Parasitária Bovina, causada por Babesia bovis, Babesia bigemina e Anaplasma marginale, transmitidas por carrapatos. Deve-se realizar controle rigoroso de ectoparasitas e manejo integrado de pastagens. O diagnóstico é confirmado por exame de sangue e esfregaço. A prevenção é feita com controle do vetor e vacinação específica conforme recomendação veterinária.",
+                    "context": "disease_diagnosis"
+                },
+                {
+                    "query": "Há casos de corrimento nasal, febre e queda na fertilidade. O que pode ser e como agir?",
+                    "expected_response": "Os sinais são característicos de Rinotraqueíte Infecciosa Bovina (IBR), causada pelo Herpesvírus bovino tipo 1. A doença afeta o trato respiratório e reprodutivo. O controle inclui vacinação regular, isolamento dos animais doentes e medidas de biossegurança para evitar disseminação. O uso de sêmen certificado livre do vírus é essencial.",
+                    "context": "disease_outbreak"
+                },
+                {
+                    "query": "Quais medidas gerais posso adotar para reduzir o risco de doenças infecciosas no rebanho?",
+                    "expected_response": "A mitigação de riscos requer adoção de medidas gerais: testes sorológicos antes da compra de animais, isolamento de novos bovinos por 2–3 semanas, separação de doentes, uso de material genético livre de patógenos e higienização rigorosa das instalações. Dividir lotes por idade e condição fisiológica e manter registros sanitários são fundamentais para biossegurança e produtividade.",
+                    "context": "preventive_medicine"
+                },
+                {
+                    "query": "Como as doenças infecciosas afetam a rentabilidade da fazenda leiteira?",
+                    "expected_response": "Doenças como brucelose, tuberculose e mastite geram perdas significativas: queda na produção de leite, condenação de carcaças, restrições comerciais e custos com controle e pesquisa. Programas de vacinação e biossegurança são investimentos que reduzem prejuízos a longo prazo. O equilíbrio entre prevenção e produtividade é essencial para a sustentabilidade econômica da fazenda.",
                     "context": "economic_impact"
                 }
             ]
