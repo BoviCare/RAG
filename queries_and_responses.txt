@@ -1,0 +1,77 @@
+1. Query:
+“Notei abortos no terço final da gestação e diminuição na produção de leite. Qual doença pode estar afetando meu rebanho e o que devo fazer?”
+
+Expected Response:
+Os sinais são compatíveis com Brucelose bovina, causada pela Brucella abortus. A enfermidade provoca abortos no final da gestação e queda na produção de leite. O controle baseia-se na vacinação das fêmeas entre 3 e 8 meses com a cepa B19 ou RB51, eliminação dos animais positivos e rigorosa biossegurança no manejo reprodutivo. É fundamental realizar testes sorológicos de triagem (Rosa de Bengala) e confirmação (2-mercaptoetanol ou fixação de complemento). Consulte o veterinário responsável e notifique os casos conforme o PNCEBT.
+
+2. 2. Leptospirose – Abortos e Umidade
+
+Query:
+“Durante o período de chuvas, observei aumento de abortos e natimortos. Qual a provável causa e como prevenir novos casos?”
+
+Expected Response:
+Provavelmente trata-se de Leptospirose bovina, zoonose causada por Leptospira spp.. A transmissão ocorre em ambientes úmidos e contaminados por urina de animais infectados. O controle envolve vacinação periódica do rebanho, drenagem de áreas alagadas, controle de roedores e isolamento de animais doentes. A higienização das instalações e manejo adequado da água são medidas fundamentais.
+
+3. Raiva dos Herbívoros – Neurológico e Letal
+
+Query:
+“Alguns bovinos estão com dificuldade de locomoção, salivação intensa e sinais neurológicos. O que pode ser e qual a conduta?”
+
+Expected Response:
+Esses sinais indicam Raiva dos herbívoros, doença viral fatal. Não há tratamento, e a profilaxia é essencial. Deve-se vacinar todo o rebanho anualmente, isolar imediatamente os animais suspeitos e notificar o serviço veterinário oficial. Evite manipular carcaças sem proteção, pois é zoonose grave. O controle dos transmissores, como morcegos hematófagos, também é indispensável.
+
+4. Mastite – Produção de Leite
+
+Query:
+“Notei grumos e alteração na coloração do leite de algumas vacas. O que pode estar ocorrendo e como controlar?”
+
+Expected Response:
+Os sintomas sugerem Mastite, inflamação da glândula mamária geralmente causada por Staphylococcus, Streptococcus ou E. coli. O controle envolve higiene rigorosa na ordenha, descarte do primeiro jato, desinfecção dos tetos antes e após a ordenha e manutenção dos equipamentos limpos. É recomendada a terapia de vaca seca e o acompanhamento com exames de CCS (contagem de células somáticas). Casos graves requerem avaliação veterinária e tratamento com antibióticos adequados.
+
+5. Tuberculose – Zoonose Crônica
+
+Query:
+“Um animal apresentou emagrecimento progressivo e tosse crônica. Pode ser tuberculose? O que devo fazer?”
+
+Expected Response:
+Sim, a Tuberculose bovina, causada por Mycobacterium bovis, provoca perda de peso, tosse e debilidade geral. É uma zoonose de importância sanitária. O controle é feito pelo abate sanitário dos animais positivos identificados por testes intradérmicos (tuberculinização). Não há tratamento, e a prevenção depende de programas oficiais como o PNCEBT. Evite consumo de leite cru e mantenha isolamento dos suspeitos.
+
+6. Neosporose – Problemas Reprodutivos
+
+Query:
+“Mesmo vacinando contra brucelose, alguns animais continuam abortando. Pode ser outra doença?”
+
+Expected Response:
+Sim, pode tratar-se de Neosporose bovina, causada pelo protozoário Neospora caninum. Transmite-se verticalmente e via contaminação por fezes de cães. O controle envolve impedir o acesso de cães a restos placentários e alimentos do gado, além do descarte de animais positivos. Não existe vacina ou tratamento eficaz, portanto, o manejo higiênico e a biossegurança são essenciais.
+
+7. Tristeza Parasitária Bovina (TPB) – Carrapatos e Hemoparasitas
+
+Query:
+“Alguns bovinos estão apáticos, com mucosas pálidas e queda de produção de leite. O que devo suspeitar?”
+
+Expected Response:
+Os sinais são compatíveis com Tristeza Parasitária Bovina, causada por Babesia bovis, Babesia bigemina e Anaplasma marginale, transmitidas por carrapatos. Deve-se realizar controle rigoroso de ectoparasitas e manejo integrado de pastagens. O diagnóstico é confirmado por exame de sangue e esfregaço. A prevenção é feita com controle do vetor e vacinação específica conforme recomendação veterinária.
+
+8. Rinotraqueíte Infecciosa Bovina (IBR) – Respiratória e Reprodutiva
+
+Query:
+“Há casos de corrimento nasal, febre e queda na fertilidade. O que pode ser e como agir?”
+
+Expected Response:
+Os sinais são característicos de Rinotraqueíte Infecciosa Bovina (IBR), causada pelo Herpesvírus bovino tipo 1. A doença afeta o trato respiratório e reprodutivo. O controle inclui vacinação regular, isolamento dos animais doentes e medidas de biossegurança para evitar disseminação. O uso de sêmen certificado livre do vírus é essencial.
+
+9. Controle e Profilaxia Geral – Medidas Preventivas
+
+Query:
+“Quais medidas gerais posso adotar para reduzir o risco de doenças infecciosas no rebanho?”
+
+Expected Response:
+A mitigação de riscos requer adoção de medidas gerais: testes sorológicos antes da compra de animais, isolamento de novos bovinos por 2–3 semanas, separação de doentes, uso de material genético livre de patógenos e higienização rigorosa das instalações. Dividir lotes por idade e condição fisiológica e manter registros sanitários são fundamentais para biossegurança e produtividade.
+
+10. Impacto Econômico das Doenças – Perdas e Controle
+
+Query:
+“Como as doenças infecciosas afetam a rentabilidade da fazenda leiteira?”
+
+Expected Response:
+Doenças como brucelose, tuberculose e mastite geram perdas significativas: queda na produção de leite, condenação de carcaças, restrições comerciais e custos com controle e pesquisa. Programas de vacinação e biossegurança são investimentos que reduzem prejuízos a longo prazo. O equilíbrio entre prevenção e produtividade é essencial para a sustentabilidade econômica da fazenda.

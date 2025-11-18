@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+pydantic
+requests
+openai
+python-dotenv
+numpy
+beautifulsoup4
+dspy
+pyarrow
+starlette
+PyMuPDF
+langchain-core
+langchain-community
+pymilvus==2.5.14
+mmh3

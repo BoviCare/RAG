@@ -1,0 +1,507 @@
+{
+  "evaluation_type": "HealthBench-style VetBench Model Comparison",
+  "models_tested": [
+    "gpt-5-mini"
+  ],
+  "total_queries": 10,
+  "reranking_enabled": true,
+  "model_comparison": {
+    "gpt-5-mini": {
+      "model_name": "GPT-5 Mini",
+      "model_id": "gpt-5-mini",
+      "results": [
+        {
+          "query": "Notei abortos no ter\u00e7o final da gesta\u00e7\u00e3o e diminui\u00e7\u00e3o na produ\u00e7\u00e3o de leite. Qual doen\u00e7a pode estar afetando meu rebanho e o que devo fazer?",
+          "expected_response": "Os sinais s\u00e3o compat\u00edveis com Brucelose bovina, causada pela Brucella abortus. A enfermidade provoca abortos no final da gesta\u00e7\u00e3o e queda na produ\u00e7\u00e3o de leite. O controle baseia-se na vacina\u00e7\u00e3o das f\u00eameas entre 3 e 8 meses com a cepa B19 ou RB51, elimina\u00e7\u00e3o dos animais positivos e rigorosa biosseguran\u00e7a no manejo reprodutivo. \u00c9 fundamental realizar testes sorol\u00f3gicos de triagem (Rosa de Bengala) e confirma\u00e7\u00e3o (2-mercaptoetanol ou fixa\u00e7\u00e3o de complemento). Consulte o veterin\u00e1rio respons\u00e1vel e notifique os casos conforme o PNCEBT.",
+          "actual_response": "Pelo quadro descrito, a doen\u00e7a mais compat\u00edvel com abortos no ter\u00e7o final da gesta\u00e7\u00e3o (aprox. 6\u20138 meses) associada \u00e0 queda na produ\u00e7\u00e3o de leite \u00e9 a brucelose bovina (Brucella abortus). O texto fornecido descreve exatamente esses sinais: abortos tardios, aumento do intervalo entre partos e diminui\u00e7\u00e3o da produ\u00e7\u00e3o l\u00e1ctea. A brucelose \u00e9 cr\u00f4nica, zoon\u00f3tica (risco para pessoas que manipulam os animais) e o agente pode permanecer vi\u00e1vel por longos per\u00edodos em material de aborto e restos placent\u00e1rios.\n\nOutras causas poss\u00edveis, tamb\u00e9m mencionadas no material, incluem a diarreia viral bovina (BVD), que pode causar diversos problemas reprodutivos e impacto produtivo, e neosporose (que, segundo o documento, n\u00e3o tem tratamento eficaz e vacinas n\u00e3o comprovadamente preventivas). Portanto \u00e9 importante investigar diferencialmente.\n\nO que voc\u00ea deve fazer (com base no material fornecido)\n- Procure imediatamente o m\u00e9dico veterin\u00e1rio para diagn\u00f3stico confirmat\u00f3rio (avalia\u00e7\u00e3o cl\u00ednica e exames laboratoriais).  \n- Isole animais que abortaram e evite contato desnecess\u00e1rio com as \u00e1reas e materiais contaminados. Lembre \u00e0s pessoas que usam equipamento de prote\u00e7\u00e3o: a brucelose \u00e9 zoonose.  \n- Guarde/encaminhe fetos, placenta e amostras ao laborat\u00f3rio veteri\u00adn\u00e1rio conforme orienta\u00e7\u00e3o do profissional (esses materiais podem manter o agente vi\u00e1vel por meses).  \n- Fa\u00e7a limpeza e desinfec\u00e7\u00e3o das instala\u00e7\u00f5es/utens\u00edlios usando produtos eficazes citados nos documentos: cloro, cal (\u00f3xido de c\u00e1lcio), cresol e/ou formol em concentra\u00e7\u00f5es adequadas. Note que o agente \u00e9 sens\u00edvel \u00e0 luz solar, mas resistente em condi\u00e7\u00f5es de sombra/umidade/baixas temperaturas.  \n- Evite comercializar ou oferecer ao consumo leite n\u00e3o pasteurizado \u2014 o agente \u00e9 sens\u00edvel \u00e0 pasteuriza\u00e7\u00e3o.  \n- Discuta com o veterin\u00e1rio a necessidade de exames sorol\u00f3gicos no rebanho e medidas de controle/erradica\u00e7\u00e3o (programas de controle s\u00e3o citados como necess\u00e1rios em rebanhos end\u00eamicos).\n\nSe houver suspeita de BVD, pe\u00e7a ao veterin\u00e1rio investiga\u00e7\u00e3o para identificar animais persistentemente infectados (PI), pois estes s\u00e3o fontes constantes de dissemina\u00e7\u00e3o.\n\nSe quiser, posso sugerir uma lista de exames que o veterin\u00e1rio pode pedir (ex.: sorologias para Brucella, PCR/isolamento em material de aborto, investiga\u00e7\u00e3o de BVD/PI), ou um roteiro pr\u00e1tico de biosseguran\u00e7a para a fazenda.",
+          "overall_score": 0.3333333333333333,
+          "metrics": {
+            "overall_score": 0.3333333333333333,
+            "disease_diagnosis": 0.3333333333333333,
+            "theme:general_veterinary": 0.3333333333333333,
+            "axis:accuracy": 0.0,
+            "theme:dairy_management": 0.0,
+            "level:example": 0.3333333333333333,
+            "axis:safety": 1.0,
+            "theme:emergency_care": 1.0,
+            "axis:completeness": 0.0,
+            "theme:prevention": 0.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "BruceloseBovina",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[20, 21]",
+              "relevance_score": 0.7591887712478638,
+              "content_preview": "Brucelose bovina\nAinda \u00e9 um s\u00e9rio problema de sa\u00fade animal na maioria dos pa\u00edses. Com exce\u00e7\u00e3o daqueles que, ap\u00f3s \nprogramas rigorosos, conseguiram erradic\u00e1-la ou pelo menos reduzir significativamente ..."
+            },
+            {
+              "disease_name": "DiarreiaViralBovina(BVD)",
+              "disease_type": "DoencasViricas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[15, 16]",
+              "relevance_score": 0.7444498538970947,
+              "content_preview": "Diarreia viral bovina (BVD)\n\u00c9 causada um v\u00edrus com alta variabilidade gen\u00e9tica e antig\u00eanica, o v\u00edrus da diarreia viral bovina (BVD), e \nacomete animais de todas as idades. \u00c9 considerada uma das princi..."
+            },
+            {
+              "disease_name": "Neosporose",
+              "disease_type": "DoencasParasit\u00e1rias",
+              "chunk_index": "2",
+              "section_type": "Diagnostico",
+              "page_number": "23",
+              "relevance_score": 0.7424992918968201,
+              "content_preview": "Diagn\u00f3stico da Neosporose: para ser confirmat\u00f3rio, \u00e9 fundamental associar dados epidemiol\u00f3gicos, provas sorol\u00f3gicas, \nimuno-histoqu\u00edmica e outros m\u00e9todos para demonstrar a infec\u00e7\u00e3o na m\u00e3e e no feto ab..."
+            }
+          ]
+        },
+        {
+          "query": "Durante o per\u00edodo de chuvas, observei aumento de abortos e natimortos. Qual a prov\u00e1vel causa e como prevenir novos casos?",
+          "expected_response": "Provavelmente trata-se de Leptospirose bovina, zoonose causada por Leptospira spp.. A transmiss\u00e3o ocorre em ambientes \u00famidos e contaminados por urina de animais infectados. O controle envolve vacina\u00e7\u00e3o peri\u00f3dica do rebanho, drenagem de \u00e1reas alagadas, controle de roedores e isolamento de animais doentes. A higieniza\u00e7\u00e3o das instala\u00e7\u00f5es e manejo adequado da \u00e1gua s\u00e3o medidas fundamentais.",
+          "actual_response": "Pelo contexto fornecido, a causa mais prov\u00e1vel do aumento de abortos e natimortos no per\u00edodo chuvoso \u00e9 a brucelose (Brucella abortus). Justificativa: o agente pode permanecer vi\u00e1vel por longos per\u00edodos em material de aborto e restos placent\u00e1rios (>6 meses) e sua sobreviv\u00eancia no ambiente \u00e9 favorecida por sombra, umidade e baixas temperaturas \u2014 condi\u00e7\u00f5es t\u00edpicas do per\u00edodo chuvoso.\n\nMedidas pr\u00e1ticas de preven\u00e7\u00e3o e controle (conforme o documento):\n- Remover imediatamente os materiais de aborto e restos placentares das pastagens e elimin\u00e1\u2011los adequadamente (n\u00e3o deix\u00e1\u2011los no campo).  \n- Desinfetar instala\u00e7\u00f5es, utens\u00edlios e ambiente com produtos eficazes: cloro, cal (\u00f3xido/\u00f3xido/hidr\u00f3xido de c\u00e1lcio conforme formula\u00e7\u00e3o), cresol ou formol em concentra\u00e7\u00f5es adequadas.  \n- Pasteurizar leite destinado ao consumo, pois o agente \u00e9 sens\u00edvel \u00e0 pasteuriza\u00e7\u00e3o.  \n- Adotar e/ou seguir programas oficiais de controle/erradica\u00e7\u00e3o (notificar autoridade veterin\u00e1ria local, participar do programa sanit\u00e1rio da regi\u00e3o).  \n- Considerar risco ocupacional: pessoas que manipulam animais abortados ou produtos abortivos podem adoecer; tomar precau\u00e7\u00f5es.\n\nOutras causas que devem constar no diagn\u00f3stico diferencial, segundo os documentos:\n- Neosporose (Neospora caninum): pode provocar surtos de aborto por transmiss\u00e3o horizontal quando c\u00e3es comem restos fetais e eliminam oocistos que contaminam pastagens; por\u00e9m a transmiss\u00e3o cong\u00eanita (vertical) \u00e9 a forma mais frequente. Investiga\u00e7\u00f5es sorol\u00f3gicas em rebanhos leiteiros s\u00e3o \u00fateis. Preven\u00e7\u00e3o inclui evitar que c\u00e3es tenham acesso a fetos/placentas.  \n- Tristeza parasit\u00e1ria bovina (babesiose/anaplasmose): pode cursar com aborto e natimortos; \u00e9 transmitida por carrapatos \u2014 manejo e controle de carrapatos s\u00e3o relevantes, embora haja limita\u00e7\u00e3o por resist\u00eancia a acaricidas.\n\nRecomendo acionar o m\u00e9dico veterin\u00e1rio para:\n- Coletar materiais (placenta, feto, sangue) para diagn\u00f3stico laboratorial (brucelose, Neospora, outros).  \n- Realizar sorologia e exames confirmat\u00f3rios conforme suspeita.  \n- Montar um plano de controle espec\u00edfico (testagem de rebanho, vacina\u00e7\u00e3o/elimina\u00e7\u00e3o se aplic\u00e1vel e medidas de biosseguran\u00e7a).",
+          "overall_score": 0.3333333333333333,
+          "metrics": {
+            "overall_score": 0.3333333333333333,
+            "disease_outbreak": 0.3333333333333333,
+            "theme:general_veterinary": 0.3333333333333333,
+            "axis:accuracy": 0.0,
+            "theme:dairy_management": 0.0,
+            "level:example": 0.3333333333333333,
+            "axis:safety": 1.0,
+            "theme:emergency_care": 1.0,
+            "axis:completeness": 0.0,
+            "theme:prevention": 0.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "Neosporose",
+              "disease_type": "DoencasParasit\u00e1rias",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "23",
+              "relevance_score": 0.7294405698776245,
+              "content_preview": "Doen\u00e7as parasit\u00e1rias\nNeosporose\n\u00c9 uma doen\u00e7a causada por um protozo\u00e1rio intracelular obrigat\u00f3rio denominado Neospora caninum. Esse \nparasito tem os bovinos como seu hospedeiro intermedi\u00e1rio e como hos..."
+            },
+            {
+              "disease_name": "TristezaParasitariaBovina",
+              "disease_type": "DoencasParasit\u00e1rias",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[23, 24]",
+              "relevance_score": 0.7290161848068237,
+              "content_preview": "Tristeza parasit\u00e1ria bovina (TPB)\n\u00c9 um complexo de duas doen\u00e7as com caracter\u00edsticas epidemiol\u00f3gicas semelhantes, conhecidas por babe-\nsiose e anaplasmose, que s\u00e3o causadas por tr\u00eas agentes: Babesia bi..."
+            },
+            {
+              "disease_name": "BruceloseBovina",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[20, 21]",
+              "relevance_score": 0.7300306558609009,
+              "content_preview": "Brucelose bovina\nAinda \u00e9 um s\u00e9rio problema de sa\u00fade animal na maioria dos pa\u00edses. Com exce\u00e7\u00e3o daqueles que, ap\u00f3s \nprogramas rigorosos, conseguiram erradic\u00e1-la ou pelo menos reduzir significativamente ..."
+            }
+          ]
+        },
+        {
+          "query": "Alguns bovinos est\u00e3o com dificuldade de locomo\u00e7\u00e3o, saliva\u00e7\u00e3o intensa e sinais neurol\u00f3gicos. O que pode ser e qual a conduta?",
+          "expected_response": "Esses sinais indicam Raiva dos herb\u00edvoros, doen\u00e7a viral fatal. N\u00e3o h\u00e1 tratamento, e a profilaxia \u00e9 essencial. Deve-se vacinar todo o rebanho anualmente, isolar imediatamente os animais suspeitos e notificar o servi\u00e7o veterin\u00e1rio oficial. Evite manipular carca\u00e7as sem prote\u00e7\u00e3o, pois \u00e9 zoonose grave. O controle dos transmissores, como morcegos hemat\u00f3fagos, tamb\u00e9m \u00e9 indispens\u00e1vel.",
+          "actual_response": "O quadro descrito (dificuldade de locomo\u00e7\u00e3o/ataxia, saliva\u00e7\u00e3o intensa e sinais neurol\u00f3gicos) \u00e9 compat\u00edvel com raiva bovina.\n\nPor que suspeitar\n- A raiva em bovinos causa sinais nervosos (hiperexcitabilidade, mudan\u00e7a de comportamento), ataxia/paralisia progressiva e hipersaliva\u00e7\u00e3o; costuma evoluir para \u00f3bito em poucos dias.  \n- Transmiss\u00e3o t\u00edpica: mordida do morcego hemat\u00f3fago Desmodus rotundus.  \n- Per\u00edodo de incuba\u00e7\u00e3o: 1\u20133 meses; formas nervosa ou paral\u00edtica.\n\nConduta recomendada (conforme literatura fornecida)\n1. Tratar como suspeita de raiva: isolar o animal e restringir o contato.  \n2. Evitar manipula\u00e7\u00f5es da cavidade oral e contato com saliva sem equipamento de prote\u00e7\u00e3o, pois h\u00e1 risco de contamina\u00e7\u00e3o (\u00e9 zoonose).  \n3. N\u00e3o existe tratamento eficaz para animais afetados; a doen\u00e7a \u00e9 fatal.  \n4. Adotar medidas preventivas: vacina\u00e7\u00e3o do rebanho e controle de morcegos (medidas de manejo e controle de vetores).  \n5. Buscar orienta\u00e7\u00e3o de m\u00e9dico veterin\u00e1rio para manejo do caso e medidas de controle no estabelecimento.\n\nObserva\u00e7\u00e3o: a raiva bovina tem import\u00e2ncia em sa\u00fade p\u00fablica; tome precau\u00e7\u00f5es pessoais ao manipular animais suspeitos.",
+          "overall_score": 0.3333333333333333,
+          "metrics": {
+            "overall_score": 0.3333333333333333,
+            "emergency_care": 0.3333333333333333,
+            "theme:general_veterinary": 0.3333333333333333,
+            "axis:accuracy": 0.0,
+            "theme:dairy_management": 0.0,
+            "level:example": 0.3333333333333333,
+            "axis:safety": 1.0,
+            "theme:emergency_care": 1.0,
+            "axis:completeness": 0.0,
+            "theme:prevention": 0.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "RaivaDosHerb\u00edvoros",
+              "disease_type": "DoencasViricas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "18",
+              "relevance_score": 0.7455690503120422,
+              "content_preview": "Raiva dos herb\u00edvoros\n\u00c9 uma doen\u00e7a infectocontagiosa, aguda e fatal, causada por um v\u00edrus que atinge o sistema nervoso cen-\ntral. Cursa com sintomatologia nervosa, mudan\u00e7a de comportamento, agressivida..."
+            },
+            {
+              "disease_name": "Raiva",
+              "disease_type": "table",
+              "chunk_index": "10",
+              "section_type": "table",
+              "page_number": "1",
+              "relevance_score": 0.46761175990104675,
+              "content_preview": "TABELA: Principais doen\u00e7as de bovinos leiteiros\n\nDoen\u00e7a: Raiva\n- Microorganismo: V\u00edrus\n- Transmiss\u00e3o: Mordedura de morcegos hemat\u00f3fagos\n- Sinais cl\u00ednicos: Anorexia; hiperexcitabilidade; ataxia; morte\n..."
+            },
+            {
+              "disease_name": "Leptospirose",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "22",
+              "relevance_score": 0.7343138456344604,
+              "content_preview": "Leptospirose\n\u00c9 uma infec\u00e7\u00e3o zoon\u00f3tica em todo o mundo, causada por espiroquetas patog\u00eanicas do g\u00eanero Leptospira. \nEm bovinos, a doen\u00e7a varia de quadro cl\u00ednico agudo, com febre, hemat\u00faria, hemoglobin\u00fa..."
+            }
+          ]
+        },
+        {
+          "query": "Notei grumos e altera\u00e7\u00e3o na colora\u00e7\u00e3o do leite de algumas vacas. O que pode estar ocorrendo e como controlar?",
+          "expected_response": "Os sintomas sugerem Mastite, inflama\u00e7\u00e3o da gl\u00e2ndula mam\u00e1ria geralmente causada por Staphylococcus, Streptococcus ou E. coli. O controle envolve higiene rigorosa na ordenha, descarte do primeiro jato, desinfec\u00e7\u00e3o dos tetos antes e ap\u00f3s a ordenha e manuten\u00e7\u00e3o dos equipamentos limpos. \u00c9 recomendada a terapia de vaca seca e o acompanhamento com exames de CCS (contagem de c\u00e9lulas som\u00e1ticas). Casos graves requerem avalia\u00e7\u00e3o veterin\u00e1ria e tratamento com antibi\u00f3ticos adequados.",
+          "actual_response": "Pelo que descreve (grumos e altera\u00e7\u00e3o de cor do leite) o quadro mais prov\u00e1vel \u00e9 mastite \u2014 inflama\u00e7\u00e3o/infe\u00e7\u00e3o da gl\u00e2ndula mam\u00e1ria. Nos documentos fornecidos h\u00e1 confirma\u00e7\u00e3o de que altera\u00e7\u00f5es da composi\u00e7\u00e3o e apar\u00eancia do leite ocorrem conforme o agente e a intensidade da doen\u00e7a, e que as mastites podem ser de origem infecciosa (Staphylococcus spp., Streptococcus spp., Corynebacterium, Mycoplasma, coliformes, Pseudomonas, fungos, algas etc.) ou n\u00e3o infecciosa (fisiol\u00f3gica ou por agente f\u00edsico/qu\u00edmico).\n\nMedidas de controle e preven\u00e7\u00e3o indicadas nos documentos:\n- Buscar orienta\u00e7\u00e3o do m\u00e9dico-veterin\u00e1rio para diagn\u00f3stico e tratamento (uso de antibi\u00f3ticos e selantes em vacas secas deve ser feito sob supervis\u00e3o veterin\u00e1ria).  \n- Melhorar higiene e manejo da ordenha: local e equipamentos limpos, ordenhador calmo e manejo higi\u00e9nico.  \n- Manuten\u00e7\u00e3o peri\u00f3dica das ordenhadeiras (controle de v\u00e1cuo, substitui\u00e7\u00e3o de borrachas e teteiras).  \n- Pr\u00e1ticas de biosseguran\u00e7a: limpeza e desinfec\u00e7\u00e3o da sala de ordenha e equipamentos.  \n- Manejo para reduzir fatores predisponentes: evitar les\u00f5es nos tetos/\u00fabere, n\u00e3o estressar os animais antes da ordenha, secar vacas com lacta\u00e7\u00e3o superior a 305 dias, descartar animais muito velhos, e evitar que terneiras mamem umas nas outras.  \n- Nutri\u00e7\u00e3o adequada e, quando aplic\u00e1vel, vacina\u00e7\u00e3o (documento cita suplementa\u00e7\u00e3o e vacina\u00e7\u00e3o como pontos a considerar).  \n- Treinamento e infraestrutura adequados para garantir boas pr\u00e1ticas de ordenha e minimizar novas infec\u00e7\u00f5es.\n\nObserva\u00e7\u00e3o de sa\u00fade p\u00fablica: alguns agentes (ex.: Mycobacterium bovis) podem ser eliminados no leite e representam risco zoon\u00f3tico; o estado sanit\u00e1rio de vacas doadoras de colostro \u00e9 importante.\n\nO que fazer agora (priorit\u00e1rio):\n- Consulte um m\u00e9dico-veterin\u00e1rio para avaliar os animais, confirmar diagn\u00f3stico (masto cl\u00ednico/subcl\u00ednico) e orientar exames e tratamento espec\u00edficos.  \n- Siga orienta\u00e7\u00e3o veterin\u00e1ria quanto ao destino do leite das vacas suspeitas at\u00e9 resolu\u00e7\u00e3o do caso.  \n- Revise e corrija imediatamente higiene e manuten\u00e7\u00e3o do equipamento de ordenha e o manejo de ordenha na sua propriedade para evitar dissemina\u00e7\u00e3o.\n\nSe quiser, me informe mais detalhes (quantas vacas afetadas, sinais no \u00fabere, presen\u00e7a de febre, hist\u00f3rico de ordenha, se j\u00e1 houve tratamento) e eu posso ajudar a organizar os pontos para discutir com o veterin\u00e1rio.",
+          "overall_score": 1.0,
+          "metrics": {
+            "overall_score": 1.0,
+            "mastitis_management": 1.0,
+            "theme:general_veterinary": 1.0,
+            "axis:accuracy": 1.0,
+            "theme:dairy_management": 1.0,
+            "level:example": 1.0,
+            "axis:safety": 1.0,
+            "theme:emergency_care": 1.0,
+            "axis:completeness": 1.0,
+            "theme:prevention": 1.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "Mastite",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "3",
+              "section_type": "Controle_e_Profilaxia",
+              "page_number": "19",
+              "relevance_score": 0.7454236745834351,
+              "content_preview": "Controle e profilaxia da Mastite: o controle da mastite deve levar em conta a redu\u00e7\u00e3o dos fatores que podem pre-\ndispor a sua ocorr\u00eancia nos animais, tais como: adequar as instala\u00e7\u00f5es de forma a evita..."
+            },
+            {
+              "disease_name": "Mastite",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[18, 19]",
+              "relevance_score": 0.7415264844894409,
+              "content_preview": "Doen\u00e7as bacterianas\nMastite\nApesar de todos avan\u00e7os tecnol\u00f3gicos, a infec\u00e7\u00e3o da gl\u00e2ndula mam\u00e1ria continua sendo a doen\u00e7a bacte-\nriana com maior impacto em rebanhos leiteiros e, portanto, avan\u00e7os cont\u00ed..."
+            },
+            {
+              "disease_name": "Tuberculose",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[19, 20]",
+              "relevance_score": 0.7374275922775269,
+              "content_preview": "Tuberculose\nImportante zoonose de relev\u00e2ncia para sa\u00fade p\u00fablica causada por Mycobacterium bovis (M. bovis), ge-\nrando grandes perdas econ\u00f4micas \u00e0 cadeia produtiva do leite. Pode acometer ruminantes, s..."
+            }
+          ]
+        },
+        {
+          "query": "Um animal apresentou emagrecimento progressivo e tosse cr\u00f4nica. Pode ser tuberculose? O que devo fazer?",
+          "expected_response": "Sim, a Tuberculose bovina, causada por Mycobacterium bovis, provoca perda de peso, tosse e debilidade geral. \u00c9 uma zoonose de import\u00e2ncia sanit\u00e1ria. O controle \u00e9 feito pelo abate sanit\u00e1rio dos animais positivos identificados por testes intrad\u00e9rmicos (tuberculiniza\u00e7\u00e3o). N\u00e3o h\u00e1 tratamento, e a preven\u00e7\u00e3o depende de programas oficiais como o PNCEBT. Evite consumo de leite cru e mantenha isolamento dos suspeitos.",
+          "actual_response": "Sim \u2014 emagrecimento progressivo e tosse cr\u00f4nica s\u00e3o sinais compat\u00edveis com tuberculose bovina, embora n\u00e3o sejam espec\u00edficos (podem ter outras causas). Pelo material fornecido:\n\nO que fazer agora (passos pr\u00e1ticos)\n- Isole o animal para reduzir contato com o rebanho e com pessoas.  \n- N\u00e3o ofere\u00e7a o leite desse animal para consumo humano nem para terneiras; descarte ou higienize (pasteurize) antes de usar. Evite uso do colostro dessa f\u00eamea at\u00e9 investiga\u00e7\u00e3o.  \n- Evite contato direto (p. ex. focinho a focinho) e minimize exposi\u00e7\u00e3o a aeross\u00f3is; quem manipular o animal use EPIs (luvas, m\u00e1scara). Lembre que M. bovis \u00e9 zoonose.  \n- Chame um m\u00e9dico-veterin\u00e1rio habilitado pelo Programa Nacional de Controle e Erradica\u00e7\u00e3o da Brucelose e Tuberculose (PNCEBT). O diagn\u00f3stico \u00e9 feito por prova cut\u00e2nea com tuberculina (tuberculiniza\u00e7\u00e3o \u2014 prova cervical com M. bovis) e deve ser realizado por veterin\u00e1rio habilitado pelo PNCEBT.  \n- Teste o rebanho conforme orienta\u00e7\u00e3o do veterin\u00e1rio/autoridade sanit\u00e1ria, porque animais assintom\u00e1ticos (especialmente os mais velhos) podem ser fontes de infec\u00e7\u00e3o.  \n- Siga as recomenda\u00e7\u00f5es do PNCEBT e do m\u00e9dico-veterin\u00e1rio quanto \u00e0s medidas de controle e sanidade (manejo, rastreamento e medidas administrativas).\n\nSe quiser, me diga: local (estado/munic\u00edpio) ou se j\u00e1 tem contato com um veterin\u00e1rio, que eu descrevo com mais detalhe os cuidados imediatos com o manejo do leite/colostro e a biosseguran\u00e7a at\u00e9 a chegada do profissional.",
+          "overall_score": 0.5833333333333334,
+          "metrics": {
+            "overall_score": 0.5833333333333334,
+            "disease_diagnosis": 0.5833333333333334,
+            "theme:general_veterinary": 0.5833333333333334,
+            "axis:accuracy": 0.0,
+            "theme:dairy_management": 0.0,
+            "level:example": 0.5833333333333334,
+            "axis:safety": 1.0,
+            "theme:emergency_care": 1.0,
+            "axis:completeness": 1.0,
+            "theme:prevention": 1.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "Tuberculose",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "2",
+              "section_type": "Diagnostico",
+              "page_number": "20",
+              "relevance_score": 0.7315168380737305,
+              "content_preview": "Diagn\u00f3stico da Tuberculose: \u00e9 realizado por meio de detec\u00e7\u00e3o da resposta imunol\u00f3gica ao pat\u00f3geno Mycobacterium, \nque \u00e9 espec\u00edfica. O teste cut\u00e2neo de rea\u00e7\u00e3o \u00e0 tuberculina, tuberculiniza\u00e7\u00e3o pela prova ..."
+            },
+            {
+              "disease_name": "Tuberculose",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[19, 20]",
+              "relevance_score": 0.763043224811554,
+              "content_preview": "Tuberculose\nImportante zoonose de relev\u00e2ncia para sa\u00fade p\u00fablica causada por Mycobacterium bovis (M. bovis), ge-\nrando grandes perdas econ\u00f4micas \u00e0 cadeia produtiva do leite. Pode acometer ruminantes, s..."
+            },
+            {
+              "disease_name": "BruceloseBovina",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "2",
+              "section_type": "Diagnostico",
+              "page_number": "21",
+              "relevance_score": 0.7232499718666077,
+              "content_preview": "Diagn\u00f3stico da Brucelose Bovina: embora um diagn\u00f3stico definitivo e incontest\u00e1vel de brucelose possa ser obtido pelo iso-\nlamento do agente etiol\u00f3gico, esse procedimento \u00e9 caro, demorado e exige recur..."
+            }
+          ]
+        },
+        {
+          "query": "Mesmo vacinando contra brucelose, alguns animais continuam abortando. Pode ser outra doen\u00e7a?",
+          "expected_response": "Sim, pode tratar-se de Neosporose bovina, causada pelo protozo\u00e1rio Neospora caninum. Transmite-se verticalmente e via contamina\u00e7\u00e3o por fezes de c\u00e3es. O controle envolve impedir o acesso de c\u00e3es a restos placent\u00e1rios e alimentos do gado, al\u00e9m do descarte de animais positivos. N\u00e3o existe vacina ou tratamento eficaz, portanto, o manejo higi\u00eanico e a biosseguran\u00e7a s\u00e3o essenciais.",
+          "actual_response": "Sim. Pelas informa\u00e7\u00f5es do material fornecido, a ocorr\u00eancia de abortos mesmo com vacina\u00e7\u00e3o contra brucelose pode ter outras causas ou estar relacionada a falhas/vias de vacina\u00e7\u00e3o. O contexto traz algumas observa\u00e7\u00f5es \u00fateis:\n\n- Leptospirose: \u00e9 mencionada como outra zoonose importante em bovinos e pode levar a perdas reprodutivas (incluindo aborto). A vacina\u00e7\u00e3o contra leptospirose costuma ser feita a cada seis meses (h\u00e1 programas que usam esquema anual) e sua efic\u00e1cia depende da idade na primeira vacina\u00e7\u00e3o, do status infeccioso pr\u00e9\u2011vio do animal e da composi\u00e7\u00e3o da vacina (h\u00e1 sugest\u00e3o de diferen\u00e7as entre vacinas monovalentes e multivalentes). Tamb\u00e9m \u00e9 recomendada vigil\u00e2ncia peri\u00f3dica do rebanho e controle de fatores de risco (por exemplo, evitar acesso de roedores \u00e0 alimenta\u00e7\u00e3o).\n\n- Vacina contra brucelose: a prote\u00e7\u00e3o depende da vacina e da idade/estado vacinal. A vacina B19 \u00e9 usada em f\u00eameas de 3\u20138 meses, mas pode interferir em sorologia e, se aplicada em final de gesta\u00e7\u00e3o, pode provocar aborto. Para f\u00eameas adultas de status vacinal desconhecido, usa\u2011se RB51, que tem boa prote\u00e7\u00e3o em condi\u00e7\u00f5es experimentais e de campo. Al\u00e9m disso, animais j\u00e1 infectados antes da vacina\u00e7\u00e3o podem continuar a excretar o agente ou abortar, pois a vacina \u00e9 menos eficaz nesses casos.\n\nRecomenda\u00e7\u00f5es pr\u00e1ticas (conforme o material):\n- Investigar leptospirose como causa poss\u00edvel (vacina\u00e7\u00e3o apropriada, exames de monitoramento do rebanho).\n- Verificar hist\u00f3rico vacinal (tipo de vacina, idade e momento da aplica\u00e7\u00e3o) e se houve vacina\u00e7\u00e3o tardia ou animal j\u00e1 infectado antes da vacina\u00e7\u00e3o.\n- Realizar monitoramento sorol\u00f3gico peri\u00f3dico e eliminar animais reagentes, conforme programas oficiais; evitar coletar sangue 2\u20134 semanas antes ou depois do parto para n\u00e3o obter falsos negativos.\n- Revisar medidas de biosseguran\u00e7a (controle de introdu\u00e7\u00e3o de animais, higiene da maternidade, controle de roedores).\n\nSe quiser, posso indicar um plano de diagn\u00f3stico para investigar causas de aborto no seu rebanho (exames sorol\u00f3gicos/isoleta\u00e7\u00f5es, amostras a coletar, prioridades de testes) \u2014 informe quantos animais e hist\u00f3rico vacinal.",
+          "overall_score": 0.0,
+          "metrics": {
+            "overall_score": 0.0,
+            "disease_outbreak": 0.0,
+            "theme:general_veterinary": 0.0,
+            "axis:accuracy": 0.0,
+            "theme:dairy_management": 0.0,
+            "level:example": 0.0,
+            "axis:safety": 0.0,
+            "theme:emergency_care": 0.0,
+            "axis:completeness": 0.0,
+            "theme:prevention": 0.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "Leptospirose",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "3",
+              "section_type": "Controle_e_Profilaxia",
+              "page_number": "[22, 23]",
+              "relevance_score": 0.7462422847747803,
+              "content_preview": "Controle e profilaxia da Leptospirose: geralmente, a vacina\u00e7\u00e3o contra a leptospirose ocorre em dose \u00fanica, a cada seis \nmeses; evid\u00eancias sugerem que um programa de vacina\u00e7\u00e3o que compreenda a vacina\u00e7\u00e3..."
+            },
+            {
+              "disease_name": "BruceloseBovina",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "3",
+              "section_type": "Controle_e_Profilaxia",
+              "page_number": "[21, 22]",
+              "relevance_score": 0.7642622590065002,
+              "content_preview": "Controle e profilaxia da Brucelose Bovina: a vacina\u00e7\u00e3o do gado \u00e9 uma das medidas mais eficazes para reduzir a preval\u00eancia \nda brucelose, sendo utilizada com sucesso em muitos programas de controle e e..."
+            },
+            {
+              "disease_name": "BruceloseBovina",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "2",
+              "section_type": "Diagnostico",
+              "page_number": "21",
+              "relevance_score": 0.7326036095619202,
+              "content_preview": "Diagn\u00f3stico da Brucelose Bovina: embora um diagn\u00f3stico definitivo e incontest\u00e1vel de brucelose possa ser obtido pelo iso-\nlamento do agente etiol\u00f3gico, esse procedimento \u00e9 caro, demorado e exige recur..."
+            }
+          ]
+        },
+        {
+          "query": "Alguns bovinos est\u00e3o ap\u00e1ticos, com mucosas p\u00e1lidas e queda de produ\u00e7\u00e3o de leite. O que devo suspeitar?",
+          "expected_response": "Os sinais s\u00e3o compat\u00edveis com Tristeza Parasit\u00e1ria Bovina, causada por Babesia bovis, Babesia bigemina e Anaplasma marginale, transmitidas por carrapatos. Deve-se realizar controle rigoroso de ectoparasitas e manejo integrado de pastagens. O diagn\u00f3stico \u00e9 confirmado por exame de sangue e esfrega\u00e7o. A preven\u00e7\u00e3o \u00e9 feita com controle do vetor e vacina\u00e7\u00e3o espec\u00edfica conforme recomenda\u00e7\u00e3o veterin\u00e1ria.",
+          "actual_response": "De acordo com os documentos fornecidos, a apresenta\u00e7\u00e3o de apatia, mucosas p\u00e1lidas e queda de produ\u00e7\u00e3o de leite \u00e9 altamente sugestiva de Tristeza parasit\u00e1ria bovina (TPB) \u2014 o complexo formado por babe\u00adsiose (Babesia bigemina e Babesia bovis) e anaplasmose (Anaplasma marginale).\n\nPontos-chave do contexto:\n- Agentes: Babesia bigemina, Babesia bovis e Anaplasma marginale.\n- Transmiss\u00e3o: principalmente pelo carrapato Rhipicephalus (Boophilus) microplus; A. marginale tamb\u00e9m por insetos hemat\u00f3fagos e instrumentos (seringas/agulhas).\n- Sinais compat\u00edveis: febre, apatia, anorexia, suspens\u00e3o s\u00fabita da lacta\u00e7\u00e3o. B. bigemina costuma causar palidez das mucosas e hemoglobin\u00faria; B. bovis pode apresentar sinais nervosos; anaplasmose frequentemente causa icter\u00edcia. Infec\u00e7\u00f5es subcl\u00ednicas tamb\u00e9m levam a queda da produ\u00e7\u00e3o e subfertilidade.\n- Complica\u00e7\u00f5es poss\u00edveis: aborto, reten\u00e7\u00e3o de placenta, morte.\n- Observa\u00e7\u00e3o importante para manejo: per\u00edodos de car\u00eancia de f\u00e1rmacos no leite e dificuldades no controle por resist\u00eancia acaricida.\n\nO que fazer agora (conforme o contexto):\n- Suspeitar de TPB e chamar um m\u00e9dico-veterin\u00e1rio para confirma\u00e7\u00e3o.\n- Verificar presen\u00e7a de carrapatos nos animais e hist\u00f3rico de manejo/uso de medicamentos.\n- Exames a realizar pelo veterin\u00e1rio: avalia\u00e7\u00e3o de mucosas, hemat\u00f3crito/PCV, esfrega\u00e7o de sangue para visualizar hemoparasitas e exames laboratoriais confirmat\u00f3rios (sorologia/PCR conforme dispon\u00edvel).\n- Implementar controle de carrapatos e manejo sanit\u00e1rio orientado pelo veterin\u00e1rio, lembrando das restri\u00e7\u00f5es de tratamento em per\u00edodo de lacta\u00e7\u00e3o (per\u00edodo de car\u00eancia).\n\nSe quiser, posso ajudar a montar uma lista de informa\u00e7\u00f5es que o veterin\u00e1rio vai precisar (n\u00famero de animais afetados, presen\u00e7a de carrapatos, hist\u00f3rico vacinal, tratamentos recentes, queda de produ\u00e7\u00e3o quantificada, presen\u00e7a de hemoglobin\u00faria/icter\u00edcia, etc.).",
+          "overall_score": 0.3333333333333333,
+          "metrics": {
+            "overall_score": 0.3333333333333333,
+            "disease_diagnosis": 0.3333333333333333,
+            "theme:general_veterinary": 0.3333333333333333,
+            "axis:accuracy": 0.0,
+            "theme:dairy_management": 0.0,
+            "level:example": 0.3333333333333333,
+            "axis:safety": 1.0,
+            "theme:emergency_care": 1.0,
+            "axis:completeness": 0.0,
+            "theme:prevention": 0.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "TristezaParasitariaBovina",
+              "disease_type": "DoencasParasit\u00e1rias",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[23, 24]",
+              "relevance_score": 0.7604084014892578,
+              "content_preview": "Tristeza parasit\u00e1ria bovina (TPB)\n\u00c9 um complexo de duas doen\u00e7as com caracter\u00edsticas epidemiol\u00f3gicas semelhantes, conhecidas por babe-\nsiose e anaplasmose, que s\u00e3o causadas por tr\u00eas agentes: Babesia bi..."
+            },
+            {
+              "disease_name": "Leptospirose",
+              "disease_type": "table",
+              "chunk_index": "6",
+              "section_type": "table",
+              "page_number": "1",
+              "relevance_score": 0.7432197332382202,
+              "content_preview": "TABELA: Principais doen\u00e7as de bovinos leiteiros\n\nDoen\u00e7a: Leptospirose\n- Microorganismo: Bact\u00e9ria\n- Transmiss\u00e3o: Pele; oral; inala\u00e7\u00e3o; reprodu\u00e7\u00e3o\n- Sinais cl\u00ednicos: Aborto; natimortos; terneiros fracos..."
+            },
+            {
+              "disease_name": "BruceloseBovina",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[20, 21]",
+              "relevance_score": 0.7479255199432373,
+              "content_preview": "Brucelose bovina\nAinda \u00e9 um s\u00e9rio problema de sa\u00fade animal na maioria dos pa\u00edses. Com exce\u00e7\u00e3o daqueles que, ap\u00f3s \nprogramas rigorosos, conseguiram erradic\u00e1-la ou pelo menos reduzir significativamente ..."
+            }
+          ]
+        },
+        {
+          "query": "H\u00e1 casos de corrimento nasal, febre e queda na fertilidade. O que pode ser e como agir?",
+          "expected_response": "Os sinais s\u00e3o caracter\u00edsticos de Rinotraque\u00edte Infecciosa Bovina (IBR), causada pelo Herpesv\u00edrus bovino tipo 1. A doen\u00e7a afeta o trato respirat\u00f3rio e reprodutivo. O controle inclui vacina\u00e7\u00e3o regular, isolamento dos animais doentes e medidas de biosseguran\u00e7a para evitar dissemina\u00e7\u00e3o. O uso de s\u00eamen certificado livre do v\u00edrus \u00e9 essencial.",
+          "actual_response": "Pelo quadro descrito \u2014 corrimento nasal, febre e queda da fertilidade \u2014 as causas mais prov\u00e1veis, com base nos textos fornecidos, s\u00e3o:\n\n- Rinotraque\u00edte infecciosa bovina (IBR, BoHV\u20111): tipicamente causa corrimento nasal e sinais respirat\u00f3rios, febre e pode provocar problemas reprodutivos (vaginites, abortos e redu\u00e7\u00e3o da fertilidade).  \n- Tristeza parasit\u00e1ria bovina (TPB: babesiose/anaplasmose): produz febre, apatia, queda de produ\u00e7\u00e3o e subfertilidade; por\u00e9m n\u00e3o \u00e9 t\u00edpica a presen\u00e7a de corrimento nasal. Transmitida por Rhipicephalus (Boophilus) microplus e por outras vias (no caso de Anaplasma).  \n- Brucelose (Brucella abortus): causa queda de fertilidade e abortos no ter\u00e7o final da gesta\u00e7\u00e3o; n\u00e3o \u00e9 caracter\u00edstica a rinorreia, mas deve ser considerada quando h\u00e1 problemas reprodutivos, al\u00e9m de ser zoonose e de gerar risco sanit\u00e1rio.\n\nComo agir (passos pr\u00e1ticos e imediatos):\n\n1. Isolar os animais com sinais respirat\u00f3rios/fever e reduzir contato com outros animais e pessoas.  \n2. Acionar o m\u00e9dico veterin\u00e1rio respons\u00e1vel para avalia\u00e7\u00e3o cl\u00ednica e coleta de material para diagn\u00f3stico.  \n3. Coleta e envio de material para investiga\u00e7\u00e3o de IBR (conforme orientado no documento):\n   - Amostras para isolamento viral / PCR: swab nasal; swab e raspado vaginal; s\u00eamen (fresco ou congelado); fragmentos de feto abortado; g\u00e2nglios (sacral, trig\u00eamio) quando houver material fetal/neuronal.  \n   - Para pesquisa sorol\u00f3gica: soro sangu\u00edneo colhido de forma ass\u00e9ptica. Coleta pareada (soro agudo e convalescente, com 2\u20134 semanas de intervalo) pode ajudar no diagn\u00f3stico.  \n   - Enviar todo o material refrigerado, identificado e acompanhado de breve hist\u00f3rico e sinais observados.  \n   - Testes: soroneutraliza\u00e7\u00e3o \u00e9 padr\u00e3o (t\u00edtulos usuais entre 8\u201364), ELISA tamb\u00e9m \u00e9 usado; PCR/isola\u00admento para detec\u00e7\u00e3o direta do v\u00edrus.  \n4. Investigar tamb\u00e9m TPB se houver febre, palidez, hemoglobin\u00faria (Babesia bigemina), sinais nervosos (B. bovis) ou icter\u00edcia (Anaplasma): avaliar presen\u00e7a de carrapatos na propriedade e hist\u00f3rico de controle. Lembrar que vetores incluem R. (Boophilus) microplus, insetos hemat\u00f3fagos e utens\u00edlios (no caso de A. marginale).  \n5. Investigar brucelose se houver aborto/rebaixamento reprodutivo: tomar cuidado extremo com manejo de material de aborto (\u00e9 vi\u00e1vel por longos per\u00edodos no ambiente). Desinfetar instala\u00e7\u00f5es e utens\u00edlios com cloro, cal, cresol ou formol em concentra\u00e7\u00f5es adequadas; pasteurizar leite; comunicar e seguir os programas oficiais de controle/erradica\u00e7\u00e3o.  \n6. Controle e preven\u00e7\u00e3o:\n   - Para IBR: manejo adequado e programas de vacina\u00e7\u00e3o (conforme orienta\u00e7\u00e3o sanit\u00e1ria local).  \n   - Para TPB: manejo e controle de carrapatos (avaliar resist\u00eancia a acaricidas e planejar tratamentos e calend\u00e1rio sanit\u00e1rio).  \n   - Para brucelose: seguir medidas do programa oficial local (testagem/controle de animais positivos, manejo de abortos, biosseguran\u00e7a).  \n7. Medidas de biosseguran\u00e7a e sa\u00fade p\u00fablica: usar EPI ao manipular animais doentes e material de aborto; lembrar que brucelose \u00e9 zoonose.\n\nSe quiser, eu posso:\n- Montar a lista de amostras e instru\u00e7\u00f5es para envio ao laborat\u00f3rio (rotulagem, refrigera\u00e7\u00e3o, hist\u00f3rico).  \n- Ajudar a priorizar exames conforme o que voc\u00ea observou na propriedade (n\u00famero de animais afetados, presen\u00e7a de abortos, presen\u00e7a de carrapatos etc.).",
+          "overall_score": 0.5833333333333334,
+          "metrics": {
+            "overall_score": 0.5833333333333334,
+            "disease_outbreak": 0.5833333333333334,
+            "theme:general_veterinary": 0.5833333333333334,
+            "axis:accuracy": 0.0,
+            "theme:dairy_management": 0.0,
+            "level:example": 0.5833333333333334,
+            "axis:safety": 1.0,
+            "theme:emergency_care": 1.0,
+            "axis:completeness": 1.0,
+            "theme:prevention": 1.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "Rinotraque\u00edteInfecciosaBovina(IBR)",
+              "disease_type": "DoencasViricas",
+              "chunk_index": "2",
+              "section_type": "Diagnostico",
+              "page_number": "14",
+              "relevance_score": 0.7195076942443848,
+              "content_preview": "Diagn\u00f3stico da Rinotraque\u00edte infecciosa bovina (IBR): o envio adequado de material ao laborat\u00f3rio \u00e9 uma etapa fundamental para o correto diag-\nn\u00f3stico. Para o isolamento viral e rea\u00e7\u00e3o da polimerase e..."
+            },
+            {
+              "disease_name": "TristezaParasitariaBovina",
+              "disease_type": "DoencasParasit\u00e1rias",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[23, 24]",
+              "relevance_score": 0.714867115020752,
+              "content_preview": "Tristeza parasit\u00e1ria bovina (TPB)\n\u00c9 um complexo de duas doen\u00e7as com caracter\u00edsticas epidemiol\u00f3gicas semelhantes, conhecidas por babe-\nsiose e anaplasmose, que s\u00e3o causadas por tr\u00eas agentes: Babesia bi..."
+            },
+            {
+              "disease_name": "BruceloseBovina",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[20, 21]",
+              "relevance_score": 0.7169748544692993,
+              "content_preview": "Brucelose bovina\nAinda \u00e9 um s\u00e9rio problema de sa\u00fade animal na maioria dos pa\u00edses. Com exce\u00e7\u00e3o daqueles que, ap\u00f3s \nprogramas rigorosos, conseguiram erradic\u00e1-la ou pelo menos reduzir significativamente ..."
+            }
+          ]
+        },
+        {
+          "query": "Quais medidas gerais posso adotar para reduzir o risco de doen\u00e7as infecciosas no rebanho?",
+          "expected_response": "A mitiga\u00e7\u00e3o de riscos requer ado\u00e7\u00e3o de medidas gerais: testes sorol\u00f3gicos antes da compra de animais, isolamento de novos bovinos por 2\u20133 semanas, separa\u00e7\u00e3o de doentes, uso de material gen\u00e9tico livre de pat\u00f3genos e higieniza\u00e7\u00e3o rigorosa das instala\u00e7\u00f5es. Dividir lotes por idade e condi\u00e7\u00e3o fisiol\u00f3gica e manter registros sanit\u00e1rios s\u00e3o fundamentais para biosseguran\u00e7a e produtividade.",
+          "actual_response": "H\u00e1 bastante orienta\u00e7\u00e3o nos documentos fornecidos. Medidas gerais recomendadas para reduzir o risco de doen\u00e7as infecciosas no rebanho:\n\n- Testes sorol\u00f3gicos antes da compra de animais. Conhecer o status sorol\u00f3gico dos animais que entram na propriedade.  \n- Quarentena de novos animais por 2\u20133 semanas antes de introduzi\u2011los no rebanho.  \n- Isolamento de bovinos doentes em instala\u00e7\u00f5es apropriadas at\u00e9 recupera\u00e7\u00e3o ou descarte.  \n- Uso de material gen\u00e9tico (s\u00eamen e embri\u00f5es) livre de pat\u00f3genos.  \n- Ado\u00e7\u00e3o de boas pr\u00e1ticas de manejo: divis\u00e3o de lotes por faixa et\u00e1ria e estado fisiol\u00f3gico para reduzir contato entre grupos de risco.  \n- Isolamento f\u00edsico da \u00e1rea de cria\u00e7\u00e3o em rela\u00e7\u00e3o a \u00e1reas vizinhas (reduzir fluxo e contato direto).  \n- Uso individual e esterilizado de material veterin\u00e1rio (agulhas, seringas, instrumentos) para evitar transmiss\u00e3o iatrog\u00eanica.  \n- Monitoramento cont\u00ednuo do rebanho: registro e controle do hist\u00f3rico reprodutivo, sinais cl\u00ednicos e preval\u00eancia das enfermidades para orientar a\u00e7\u00f5es de controle.  \n- Programas de vacina\u00e7\u00e3o conforme situa\u00e7\u00e3o epidemiol\u00f3gica (ex.: vacinas contra IBR onde h\u00e1 circula\u00e7\u00e3o do v\u00edrus; leptospirose com esquema recomendado pelo m\u00e9dico\u2011veterin\u00e1rio). Seguir orienta\u00e7\u00e3o do fabricante e do veterin\u00e1rio sobre formula\u00e7\u00e3o (inativada vs atenuada), indica\u00e7\u00e3o em vacas prenhes e intervalos de revacina\u00e7\u00e3o.  \n- Monitoramento sorol\u00f3gico peri\u00f3dico dos rebanhos para avaliar necessidade de vacinar, revacinar ou descartar animais.  \n- Em rebanhos de baixa preval\u00eancia, descartar animais n\u00e3o vacinados e soropositivos (s\u00e3o portadores e disseminadores lifelong) quando vi\u00e1vel.  \n- Controle de fatores ambientais e vetoriais: por exemplo, evitar acesso de roedores \u00e0 alimenta\u00e7\u00e3o (importante para leptospirose).  \n- Desinfec\u00e7\u00e3o quando necess\u00e1ria \u2014 para BoHV\u20111 os desinfetantes eficazes citados incluem: derivados fen\u00f3licos 1%, hipoclorito de s\u00f3dio 2%, hidr\u00f3xido de s\u00f3dio 0,5%, am\u00f4nia quatern\u00e1ria 1%, compostos iodados 10% e formalina 5%.  \n\nObserva\u00e7\u00e3o: o plano de controle ideal deve ser definido com base na situa\u00e7\u00e3o epidemiol\u00f3gica do rebanho e conduzido com apoio do m\u00e9dico\u2011veterin\u00e1rio (avalia\u00e7\u00e3o sorol\u00f3gica, custo\u2011benef\u00edcio de vacina\u00e7\u00e3o/descarto, escolha de vacinas e calend\u00e1rio).",
+          "overall_score": 0.0,
+          "metrics": {
+            "overall_score": 0.0,
+            "preventive_medicine": 0.0,
+            "theme:general_veterinary": 0.0,
+            "axis:accuracy": 0.0,
+            "theme:dairy_management": 0.0,
+            "level:example": 0.0,
+            "axis:safety": 0.0,
+            "theme:emergency_care": 0.0,
+            "axis:completeness": 0.0,
+            "theme:prevention": 0.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "",
+              "disease_type": "",
+              "chunk_index": "1",
+              "section_type": "",
+              "page_number": "13",
+              "relevance_score": 0.7741486430168152,
+              "content_preview": "Controle e Profilaxia Geral: A mitiga\u00e7\u00e3o de fatores de risco para todas doen\u00e7as demanda que algumas medidas de ordem geral sejam \nadotadas, tais como: testes sorol\u00f3gicos antes da compra de animais, is..."
+            },
+            {
+              "disease_name": "Rinotraque\u00edteInfecciosaBovina(IBR)",
+              "disease_type": "DoencasViricas",
+              "chunk_index": "3",
+              "section_type": "Controle_e_Profilaxia",
+              "page_number": "[14, 15]",
+              "relevance_score": 0.7499665021896362,
+              "content_preview": "Controle e profilaxia da IBR\n A estrat\u00e9gia de controle deve ser definida com base na situa\u00e7\u00e3o epidemiol\u00f3gica do rebanho. Programas \nde combate ao BoHV-1 requerem uma an\u00e1lise de custo-benef\u00edcio que dev..."
+            },
+            {
+              "disease_name": "Leptospirose",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "3",
+              "section_type": "Controle_e_Profilaxia",
+              "page_number": "[22, 23]",
+              "relevance_score": 0.749117374420166,
+              "content_preview": "Controle e profilaxia da Leptospirose: geralmente, a vacina\u00e7\u00e3o contra a leptospirose ocorre em dose \u00fanica, a cada seis \nmeses; evid\u00eancias sugerem que um programa de vacina\u00e7\u00e3o que compreenda a vacina\u00e7\u00e3..."
+            }
+          ]
+        },
+        {
+          "query": "Como as doen\u00e7as infecciosas afetam a rentabilidade da fazenda leiteira?",
+          "expected_response": "Doen\u00e7as como brucelose, tuberculose e mastite geram perdas significativas: queda na produ\u00e7\u00e3o de leite, condena\u00e7\u00e3o de carca\u00e7as, restri\u00e7\u00f5es comerciais e custos com controle e pesquisa. Programas de vacina\u00e7\u00e3o e biosseguran\u00e7a s\u00e3o investimentos que reduzem preju\u00edzos a longo prazo. O equil\u00edbrio entre preven\u00e7\u00e3o e produtividade \u00e9 essencial para a sustentabilidade econ\u00f4mica da fazenda.",
+          "actual_response": "As doen\u00e7as infecciosas reduzem a rentabilidade da fazenda leiteira por v\u00e1rios mecanismos diretos e indiretos. Com base nos documentos fornecidos, os principais impactos s\u00e3o:\n\nImpactos sobre produ\u00e7\u00e3o e qualidade do leite\n- Mastite (principal doen\u00e7a bacteriana): reduz a produ\u00e7\u00e3o e altera a composi\u00e7\u00e3o do leite; formas subcl\u00ednicas causam perdas produtivas sem sinais evidentes, dificultando o controle. Mastites contagiosas e ambientais exigem medidas de manejo e higiene cont\u00ednuas.  \n- Tristeza parasit\u00e1ria bovina (babesiose/anaplasmose): provoca febre, apatia, anorexia e suspens\u00e3o s\u00fabita da lacta\u00e7\u00e3o, reduzindo imediatamente a produ\u00e7\u00e3o de leite. Casos subcl\u00ednicos tamb\u00e9m acarretam queda na produ\u00e7\u00e3o.\n\nImpactos reprodutivos e mortalidade\n- Brucelose: causa abortos no ter\u00e7o final da gesta\u00e7\u00e3o (6\u20138 meses), aumenta o intervalo entre partos (IEP) e reduz a produ\u00e7\u00e3o de leite.  \n- TPB e brucelose podem culminar em aborto, reten\u00e7\u00e3o de placenta, subfertilidade e at\u00e9 morte, gerando perdas de animais e de produtividade futura.\n\nCustos com tratamento, controle e manejo\n- Gastos com medicamentos, vacinas, acaricidas e antibi\u00f3ticos; programas de controle/erradica\u00e7\u00e3o e pesquisas t\u00eam alto custo.  \n- Per\u00edodos de car\u00eancia de f\u00e1rmacos no leite for\u00e7am concentra\u00e7\u00f5es de tratamento em fases espec\u00edficas (vacas secas, novilhas), complicando a gest\u00e3o e potencialmente aumentando custos (documento TPB).  \n- Resist\u00eancia a acaricidas reduz op\u00e7\u00f5es de controle e eleva custos (TPB).\n\nPerdas comerciais e de mercado\n- Condena\u00e7\u00e3o de leite e carne, queda de pre\u00e7os e perda de acesso a mercados externos (brucelose).  \n- Doen\u00e7as zoon\u00f3ticas (brucelose) implicam riscos \u00e0 sa\u00fade p\u00fablica e custos associados (aus\u00eancias por doen\u00e7a, perda de confian\u00e7a do consumidor).\n\nRisco ambiental e necessidade de biosseguran\u00e7a\n- Agentes como B. abortus permanecem vi\u00e1veis por meses em produtos de aborto, exigindo descarte e desinfec\u00e7\u00e3o (cloro, cal, cresol, formol) e investimentos em infraestrutura.  \n- Necessidade de infraestrutura de ordenha e treinamento para reduzir novas infec\u00e7\u00f5es (mastite).\n\nResumindo: as doen\u00e7as infecciosas reduzem receita (menor volume e qualidade de leite, animais improdutivos), aumentam custos (tratamento, controle, desinfec\u00e7\u00e3o, descarte), provocam perdas reprodutivas e de animais e geram barreiras comerciais e riscos \u00e0 sa\u00fade p\u00fablica \u2014 tudo isso compromete a rentabilidade da fazenda leiteira. As medidas apontadas nos documentos incluem melhoria da higiene da ordenha, treinamento, biosseguran\u00e7a, desinfec\u00e7\u00e3o adequada e programas de controle/erradica\u00e7\u00e3o.",
+          "overall_score": 0.6666666666666666,
+          "metrics": {
+            "overall_score": 0.6666666666666666,
+            "economic_impact": 0.6666666666666666,
+            "theme:general_veterinary": 0.6666666666666666,
+            "axis:accuracy": 1.0,
+            "theme:dairy_management": 1.0,
+            "level:example": 0.6666666666666666,
+            "axis:safety": 0.0,
+            "theme:emergency_care": 0.0,
+            "axis:completeness": 1.0,
+            "theme:prevention": 1.0
+          },
+          "rubric_items_count": 4,
+          "sources": [
+            {
+              "disease_name": "Mastite",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[18, 19]",
+              "relevance_score": 0.7573387622833252,
+              "content_preview": "Doen\u00e7as bacterianas\nMastite\nApesar de todos avan\u00e7os tecnol\u00f3gicos, a infec\u00e7\u00e3o da gl\u00e2ndula mam\u00e1ria continua sendo a doen\u00e7a bacte-\nriana com maior impacto em rebanhos leiteiros e, portanto, avan\u00e7os cont\u00ed..."
+            },
+            {
+              "disease_name": "TristezaParasitariaBovina",
+              "disease_type": "DoencasParasit\u00e1rias",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[23, 24]",
+              "relevance_score": 0.7364546656608582,
+              "content_preview": "Tristeza parasit\u00e1ria bovina (TPB)\n\u00c9 um complexo de duas doen\u00e7as com caracter\u00edsticas epidemiol\u00f3gicas semelhantes, conhecidas por babe-\nsiose e anaplasmose, que s\u00e3o causadas por tr\u00eas agentes: Babesia bi..."
+            },
+            {
+              "disease_name": "BruceloseBovina",
+              "disease_type": "DoencasBacterianas",
+              "chunk_index": "1",
+              "section_type": "overview",
+              "page_number": "[20, 21]",
+              "relevance_score": 0.4745282232761383,
+              "content_preview": "Brucelose bovina\nAinda \u00e9 um s\u00e9rio problema de sa\u00fade animal na maioria dos pa\u00edses. Com exce\u00e7\u00e3o daqueles que, ap\u00f3s \nprogramas rigorosos, conseguiram erradic\u00e1-la ou pelo menos reduzir significativamente ..."
+            }
+          ]
+        }
+      ],
+      "average_score": 0.4166666666666667,
+      "max_score": 1.0,
+      "min_score": 0.0
+    }
+  },
+  "summary_metrics": {
+    "best_model": "gpt-5-mini",
+    "worst_model": "gpt-5-mini",
+    "score_range": {
+      "highest": 1.0,
+      "lowest": 0.0
+    }
+  }
+}
