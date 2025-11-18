@@ -123,15 +123,9 @@ async def generate_rag_response(
     If the context does not contain the answer, state that you could not find the information.
     Provide accurate, helpful information based on the veterinary literature provided.
     Make the response in the following format:
-    Example:
-    <Summary of the answer>
-    Summary text about the answer.
-    </Summary of the answer>
-
-    <Detailed answer in markdown format>
+    Summary of the text in the first paragraph.
     Detailed answer in markdown format.
-    </Detailed answer>
-    
+
     Context:
     ---
     {context}
