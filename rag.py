@@ -118,21 +118,30 @@ async def generate_rag_response(
         context += f"Content: {doc.get('section_text', '')}\n\n"
 
     prompt = f"""
-    You are an expert veterinary medicine Q&A assistant specializing in bovine diseases. 
-    Use the following context to answer the user's question about bovine diseases.
-    If the context does not contain the answer, state that you could not find the information.
-    Provide accurate, helpful information based on the veterinary literature provided.
-    Make the response in the following format:
-    Summary of the text in the first paragraph.
-    Detailed answer in markdown format.
+You are an expert veterinary medicine Q&A assistant specializing in bovine diseases. 
+Use the following context to answer the user's question about bovine diseases.
+If the context does not contain the answer, state that you could not find the information.
 
-    Context:
-    ---
-    {context}
-    ---
+IMPORTANT: Format your response EXACTLY as follows:
 
-    Question: "{query}"
-    """
+**Resumo:**
+[Provide a concise 2-3 sentence summary of the answer here]
+
+**Resposta Detalhada:**
+
+[Provide a detailed answer using markdown formatting with:]
+- Headers (##) for main sections
+- Bullet points (-) for lists
+- **Bold** for important terms
+- Clear paragraphs for explanations
+
+Context:
+---
+{context}
+---
+
+Question: "{query}"
+"""
     try:
         response = await asyncio.to_thread(
             openai_client.chat.completions.create,
