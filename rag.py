@@ -122,6 +122,9 @@ async def generate_rag_response(
     Use the following context to answer the user's question about bovine diseases.
     If the context does not contain the answer, state that you could not find the information.
     Provide accurate, helpful information based on the veterinary literature provided.
+    Make the response in the following format:
+    <Summary of the answer>
+    <Detailed answer in markdown format>
 
     Context:
     ---
