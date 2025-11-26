@@ -118,9 +118,9 @@ async def generate_rag_response(
         context += f"Content: {doc.get('section_text', '')}\n\n"
 
     prompt = f"""
-You are an expert veterinary medicine Q&A assistant specializing in bovine diseases. 
-Use the following context to answer the user's question about bovine diseases.
-If the context does not contain the answer, state that you could not find the information.
+    You are an expert veterinary medicine Q&A assistant specializing in bovine diseases. 
+    Use the following context to answer the user's question about bovine diseases.
+    If the context does not contain the answer, state that you could not find the information.
 
 IMPORTANT: Format your response EXACTLY as follows:
 
@@ -135,19 +135,19 @@ IMPORTANT: Format your response EXACTLY as follows:
 - **Bold** for important terms
 - Clear paragraphs for explanations
 
-Context:
----
-{context}
----
+    Context:
+    ---
+    {context}
+    ---
 
-Question: "{query}"
-"""
+    Question: "{query}"
+    """
     try:
         response = await asyncio.to_thread(
             openai_client.chat.completions.create,
             model="gpt-5-nano",
             messages=[
-                {"role": "system", "content": "You are an expert veterinary medicine assistant specializing in bovine diseases. Provide accurate, helpful information based on the veterinary literature provided."},
+                {"role": "system", "content": "You are an expert veterinary medicine assistant specializing in bovine diseases. Always format your responses with a 'Resumo:' section first (2-3 sentences), followed by a 'Resposta Detalhada:' section with markdown formatting (headers, lists, bold text). Use Portuguese (pt-BR) for all responses."},
                 {"role": "user", "content": prompt}
             ],
             # temperature=0.0,
