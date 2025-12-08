@@ -1,0 +1,110 @@
+name: "Deploy RAG Service"
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # Required for aws-actions/configure-aws-credentials
+
+env:
+  AWS_REGION: us-east-1
+  ENV_NAME: production
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    env:
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+      PROJECT_NAME: bovicare
+      SERVICE_NAME: rag-service
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Get Docker Image Tag
+        id: docker_image_tag
+        run: |
+          echo "IMAGE_VERSION=prod-${{ github.sha }}" >> $GITHUB_ENV
+
+      - name: Set ECR Environment Variables
+        run: |
+          ECR_REPO_NAME="${{ env.PROJECT_NAME }}-rag"
+          ECR_HOST="${{ env.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com"
+          echo "ECR_REPO_NAME=${ECR_REPO_NAME}" >> $GITHUB_ENV
+          echo "ECR_HOST=${ECR_HOST}" >> $GITHUB_ENV
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/GithubActionsEcrPushRole
+          role-external-id: github-actions-ecr-push
+          role-duration-seconds: 900
+          role-skip-session-tagging: true
+
+      - name: Build Docker Image
+        run: |
+          # Setup SSH agent for Docker build (if GIT_SSH_KEY is present)
+          if [ -n "${{ secrets.GIT_SSH_KEY }}" ]; then
+            eval "$(ssh-agent -s)"
+            echo "${{ secrets.GIT_SSH_KEY }}" | ssh-add -
+            SSH_ARGS="--ssh default"
+          else
+            SSH_ARGS=""
+          fi
+          
+          docker build \
+            $SSH_ARGS \
+            --platform linux/amd64 \
+            --provenance false \
+            -f Dockerfile \
+            -t ${{ env.ECR_REPO_NAME }}:${{ env.IMAGE_VERSION }} \
+            .
+
+      - name: Docker Login to ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Docker Tag
+        run: docker tag ${{ env.ECR_REPO_NAME }}:${{ env.IMAGE_VERSION }} ${{ env.ECR_HOST }}/${{ env.ECR_REPO_NAME }}:${{ env.IMAGE_VERSION }}
+
+      - name: Push Docker Image to ECR
+        run: |
+          docker push ${{ env.ECR_HOST }}/${{ env.ECR_REPO_NAME }}:${{ env.IMAGE_VERSION }}
+          
+          # Push environment-specific latest tag
+          docker tag ${{ env.ECR_REPO_NAME }}:${{ env.IMAGE_VERSION }} ${{ env.ECR_HOST }}/${{ env.ECR_REPO_NAME }}:production-latest
+          docker push ${{ env.ECR_HOST }}/${{ env.ECR_REPO_NAME }}:production-latest
+
+      - name: Get EC2 Instance ID
+        id: get_instance_id
+        run: |
+          PARAMETER_NAME="/${{ env.PROJECT_NAME }}/${{ env.ENV_NAME }}/ec2_instance_id"
+          echo "Attempting to retrieve SSM parameter with name: ${PARAMETER_NAME}"
+          
+          INSTANCE_ID=$(aws ssm get-parameter --name "${PARAMETER_NAME}" --query "Parameter.Value" --output text)
+          echo "INSTANCE_ID=${INSTANCE_ID}" >> $GITHUB_ENV
+
+      - name: Deploy to EC2 via SSM
+        if: env.INSTANCE_ID != ''
+        run: |
+          aws ssm send-command \
+            --instance-ids "${{ env.INSTANCE_ID }}" \
+            --document-name "AWS-RunShellScript" \
+            --comment "Deploying ${{ env.SERVICE_NAME }} service" \
+            --parameters commands='[
+              "cd /opt/${{ env.PROJECT_NAME }}",
+              "aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin ${{ env.ECR_HOST }}",
+              "docker-compose pull ${{ env.SERVICE_NAME }}",
+              "docker-compose up -d --no-deps ${{ env.SERVICE_NAME }}",
+              "docker image prune -f"
+            ]' \
+            --output text
