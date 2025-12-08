@@ -2,7 +2,22 @@
 
 A sophisticated Retrieval-Augmented Generation (RAG) system for bovine disease information with hybrid search, AI-powered reranking, and multiple specialized components.
 
-## 🚀 Quick Start
+## 🚀 Deployment
+
+This repository is configured with **GitHub Actions** for automated deployment to AWS (EC2).
+
+### Deployment Flow
+1.  Any push to the `main` branch triggers the deployment workflow.
+2.  The Docker image is built and pushed to Amazon ECR.
+3.  The service on the EC2 instance is updated via AWS Systems Manager (SSM).
+
+### Required Secrets
+Ensure these repository secrets are set:
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_ACCOUNT_ID`
+
+## 🚀 Quick Start (Local)
 
 ### Prerequisites
 - Python >3.11
